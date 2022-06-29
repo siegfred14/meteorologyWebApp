@@ -1,0 +1,35 @@
+{
+  "coord": { "lon": -71.2145, "lat": 46.8123 },
+  "weather": [
+    {
+      "id": 803,
+      "main": "Clouds",
+      "description": "broken clouds",
+      "icon": "04d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 296.72,
+    "feels_like": 296.44,
+    "temp_min": 294.92,
+    "temp_max": 298.34,
+    "pressure": 1015,
+    "humidity": 50
+  },
+  "visibility": 10000,
+  "wind": { "speed": 5.14, "deg": 240 },
+  "clouds": { "all": 75 },
+  "dt": 1656537789,
+  "sys": {
+    "type": 1,
+    "id": 322,
+    "country": "CA",
+    "sunrise": 1656492806,
+    "sunset": 1656549778
+  },
+  "timezone": -14400,
+  "id": 6325494,
+  "name": "Québec",
+  "cod": 200
+}
