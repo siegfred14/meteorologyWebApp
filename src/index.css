@@ -58,3 +58,15 @@ h1{
   flex-direction: column;
   justify-content: space-between;
 }
+
+.app .top{
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.app .firmament{
+  position: relative;
+  right: -90%;
+  transform-origin: 0 0;
+  transform: rotate(270deg);
+}
