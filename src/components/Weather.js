@@ -25,7 +25,17 @@ export const Weather = () => {
           </div>
         </div>
 
-        <div className="bottom"></div>
+        <div className="bottom">
+          <div className="feels">
+            <p>62F</p>
+          </div>
+          <div className="humidity">
+            <p>20%</p>
+          </div>
+          <div className="windspeed">
+            <p>12MPH</p>
+          </div>
+        </div>
       </div>
     </div>
   );
