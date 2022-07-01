@@ -25,13 +25,16 @@ export const Weather = () => {
 
       <div className="bottom">
         <div className="feels">
-          <p>62F</p>
+          <p className="bold">62F</p>
+          <p>Feels Like</p>
         </div>
         <div className="humidity">
-          <p>20%</p>
+          <p className="bold">20%</p>
+          <p>Humidity</p>
         </div>
         <div className="windspeed">
-          <p>12MPH</p>
+          <p className="bold">11MPH</p>
+          <p>Wind Speed</p>
         </div>
       </div>
     </div>
