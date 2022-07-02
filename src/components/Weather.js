@@ -20,6 +20,16 @@ export const Weather = () => {
   };
   return (
     <div>
+      <div className="search">
+        <input
+          type="text"
+          value={location}
+          onChange={(event) => setLocation(event.target.value)}
+          onKeyUp={searchLocation}
+          className="text"
+          placeholder="Enter Location"
+        />
+      </div>
       <div className="container">
         <div className="top">
           <div className="location">

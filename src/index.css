@@ -47,6 +47,11 @@ h1{
   z-index: -1;
 }
 
+.app .search{
+  text-align: center;
+  padding: 1rem;
+}
+
 .container{
   max-width: 700px;
   height: 80%;
