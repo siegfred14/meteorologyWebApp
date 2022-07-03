@@ -15,6 +15,7 @@ export const Weather = () => {
         setData(response.data);
         console.log(response.data);
       });
+      setLocation("");
     }
   };
   return (
