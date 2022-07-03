@@ -33,10 +33,21 @@ export const Weather = () => {
       <div className="container">
         <div className="top">
           <div className="location">
-            <p>Quebec</p>
+            <p> {data.name}</p>
           </div>
+          {data.main ? (
+            <div className="variable_temp">
+              <small className="min_temp">MIN TEMP: {data.main.temp_min}</small>{" "}
+              |{" "}
+              <small className="max_temp">MAX TEMP: {data.main.temp_max}</small>
+            </div>
+          ) : null}
           <div className="temp">
-            <h1>48F</h1>
+            {data.main ? (
+              <h1>{Math.round(data.main.temp_min)}&#8457;</h1>
+            ) : (
+              <h1>Data Unavailable</h1>
+            )}
           </div>
           <div className="firmament">
             <p>clouds</p>

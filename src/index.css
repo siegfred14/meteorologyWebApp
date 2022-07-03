@@ -82,6 +82,19 @@ h1{
   margin: 1rem auto;
 }
 
+.app .variable_temp{
+  text-shadow: 0 0 2px whitesmoke;
+  font-weight: bold;
+}
+
+.app .min_temp{
+  color: blue;
+}
+
+.app .max_temp{
+  color: red
+}
+
 .app .firmament{
   position: relative;
   right: -90%;
