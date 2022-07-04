@@ -46,29 +46,37 @@ export const Weather = () => {
             {data.main ? (
               <h1>{Math.round(data.main.temp_min)}&#8457;</h1>
             ) : (
-              <h1>Data Unavailable</h1>
+              <h1>--</h1>
             )}
           </div>
           <div className="firmament">
-            {data.weather ? (
-              <p>{data.weather[0].description}</p>
-            ) : (
-              <p>Data Unavailable</p>
-            )}
+            {data.weather ? <p>{data.weather[0].description}</p> : <p>--</p>}
           </div>
         </div>
 
         <div className="bottom">
           <div className="feels">
-            <p className="bold">62F</p>
+            {data.main ? (
+              <p className="bold">{data.main.feels_like.toFixed(1)}</p>
+            ) : (
+              <p>--</p>
+            )}
             <p>Feels Like</p>
           </div>
           <div className="humidity">
-            <p className="bold">20%</p>
+            {data.main ? (
+              <p className="bold">{data.main.humidity}%</p>
+            ) : (
+              <p>--</p>
+            )}
             <p>Humidity</p>
           </div>
           <div className="windspeed">
-            <p className="bold">11MPH</p>
+            {data.wind ? (
+              <p className="bold">{data.wind.speed.toFixed(1)}MPH</p>
+            ) : (
+              <p>--</p>
+            )}
             <p>Wind Speed</p>
           </div>
         </div>
