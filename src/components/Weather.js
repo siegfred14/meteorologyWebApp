@@ -50,7 +50,11 @@ export const Weather = () => {
             )}
           </div>
           <div className="firmament">
-            <p>clouds</p>
+            {data.weather ? (
+              <p>{data.weather[0].description}</p>
+            ) : (
+              <p>Data Unavailable</p>
+            )}
           </div>
         </div>
 
