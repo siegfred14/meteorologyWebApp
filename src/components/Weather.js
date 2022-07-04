@@ -5,7 +5,7 @@ export const Weather = () => {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=feef849037b29664ed07d9163f0ce25a`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&APPID=feef849037b29664ed07d9163f0ce25a`;
   //   const url =
   //     "https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid=feef849037b29664ed07d9163f0ce25a";
 
