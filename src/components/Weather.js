@@ -57,7 +57,7 @@ export const Weather = () => {
         <div className="bottom">
           <div className="feels">
             {data.main ? (
-              <p className="bold">{data.main.feels_like.toFixed(1)}</p>
+              <p className="bold">{data.main.feels_like.toFixed(1)}&#8457;</p>
             ) : (
               <p>--</p>
             )}
