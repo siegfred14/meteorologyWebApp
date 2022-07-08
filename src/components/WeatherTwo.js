@@ -1,0 +1,105 @@
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
+export const WeatherTwo = () => {
+  const [data, setData] = useState({});
+  const [location, setLocation] = useState("");
+  const [error, setError] = useState("--");
+
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&APPID=feef849037b29664ed07d9163f0ce25a`;
+  //   const url =
+  //     "https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid=feef849037b29664ed07d9163f0ce25a";
+
+  //   const searchLocation = (event) => {
+  //     if (event.key === "Enter") {
+  //       axios.get(url).then((response) => {
+  //         setData(response.data);
+  //         console.log(response.data);
+  //       });
+  //       setLocation("");
+  //     }
+  //   };
+
+  const searchLocation = useEffect((event) => {
+    axios
+      .get(url)
+      .then((response) => {
+        setData(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        setError("--");
+      });
+    setLocation("");
+  }, []);
+
+  return (
+    <div>
+      <div className="search">
+        <input
+          type="text"
+          value={location}
+          onChange={(event) => setLocation(event.target.value)}
+          onKeyUp={searchLocation}
+          className="text"
+          placeholder="Enter Location"
+        />
+      </div>
+      <div className="container">
+        <div className="top">
+          <div className="location">
+            <p> {data.name}</p>
+          </div>
+          {data.main ? (
+            <div className="variable_temp">
+              <small className="min_temp">MIN TEMP: {data.main.temp_min}</small>{" "}
+              |{" "}
+              <small className="max_temp">MAX TEMP: {data.main.temp_max}</small>
+            </div>
+          ) : null}
+          <div className="temp">
+            {data.main ? (
+              <h1>{Math.round(data.main.temp_min)}&#8457;</h1>
+            ) : (
+              <h1>{error}</h1>
+            )}
+          </div>
+          <div className="firmament">
+            {data.weather ? (
+              <p>{data.weather[0].description}</p>
+            ) : (
+              <p>{error}</p>
+            )}
+          </div>
+        </div>
+
+        <div className="bottom">
+          <div className="feels">
+            {data.main ? (
+              <p className="bold">{data.main.feels_like.toFixed(1)}&#8457;</p>
+            ) : (
+              <p>{error}</p>
+            )}
+            <p>Feels Like</p>
+          </div>
+          <div className="humidity">
+            {data.main ? (
+              <p className="bold">{data.main.humidity}%</p>
+            ) : (
+              <p>{error}</p>
+            )}
+            <p>Humidity</p>
+          </div>
+          <div className="windspeed">
+            {data.wind ? (
+              <p className="bold">{data.wind.speed.toFixed(1)}MPH</p>
+            ) : (
+              <p>{error}</p>
+            )}
+            <p>Wind Speed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
