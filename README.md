@@ -2,6 +2,8 @@
 
 ## I have employed the use axios library to get API and also chosen the format of data between standard, metric and imperial measurements.
 
+## API is from openweathermap.org
+
 ## The useState hook is my prefered choice for this project, to set Data and location.
 
 ## In it is employed some Javascript math functions like
@@ -11,7 +13,3 @@
 ### num.toFixed()
 
 ## The application posesses some very interesting UI.
-
-## I will be adding more functions to display more weather properties
-
-### Todo = useReducer for imperial to metric and F to C
